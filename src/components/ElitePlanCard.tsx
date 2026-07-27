@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import './elite-plan-card.css';
+import './elite-card-plan.css';
 
 interface ElitePlanCardProps {
   imageUrl: string;
