@@ -1,0 +1,224 @@
+/* =============================================
+   ABOUT — ContainerScroll 3D Animation
+   ============================================= */
+
+.about-scroll-section {
+  height: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .about-scroll-section {
+    height: 80rem;
+    padding: 5rem;
+  }
+}
+
+.about-scroll-wrapper {
+  padding: 2.5rem 0;
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .about-scroll-wrapper {
+    padding: 10rem 0;
+  }
+}
+
+/* ---- Header / Title ---- */
+.about-scroll-header {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-scroll-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-scroll-title-highlight {
+  display: block;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 800;
+  margin-top: 0.25rem;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--primary) 0%, #ff4d6d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Device Card ---- */
+.about-device-card {
+  max-width: 64rem;
+  margin: -3rem auto 0;
+  width: 100%;
+  border: 4px solid #6C6C6C;
+  padding: 0.5rem;
+  background: #222222;
+  border-radius: 30px;
+  box-shadow:
+    0 0 rgba(0, 0, 0, 0.3),
+    0 9px 20px rgba(0, 0, 0, 0.29),
+    0 37px 37px rgba(0, 0, 0, 0.26),
+    0 84px 50px rgba(0, 0, 0, 0.15),
+    0 149px 60px rgba(0, 0, 0, 0.04),
+    0 233px 65px rgba(0, 0, 0, 0.01);
+  height: 30rem;
+}
+
+@media (min-width: 768px) {
+  .about-device-card {
+    padding: 1.5rem;
+    height: 40rem;
+  }
+}
+
+.about-device-inner {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #f3f4f6;
+}
+
+@media (min-width: 768px) {
+  .about-device-inner {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+}
+
+.about-device-inner video,
+.about-device-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+  border-radius: 0.75rem;
+  display: block;
+  pointer-events: none;
+}
+
+/* ---- About Details Section (below ContainerScroll) ---- */
+.about-details {
+  padding: 5rem 0 3rem;
+  background: var(--bg-light);
+}
+
+.about-details-grid {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .about-details-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.about-details-text h2 {
+  font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.about-details-text .about-highlight {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.about-details-text .about-subtext {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.about-details-text .btn-text {
+  background: none;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: gap 0.3s ease;
+}
+
+.about-details-text .btn-text:hover {
+  gap: 0.75rem;
+}
+
+/* Stats cards */
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.about-stat-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.about-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 12px 32px rgba(196, 18, 48, 0.08);
+}
+
+.about-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(196, 18, 48, 0.06);
+  border-radius: 12px;
+  margin: 0 auto 0.75rem;
+  color: var(--primary);
+}
+
+.about-stat-number {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.about-stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

@@ -1,0 +1,215 @@
+/* =============================================
+   HERO 10 — Premium Fan Layout
+   ============================================= */
+
+.hero10 {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-light);
+}
+
+.hero10-inner {
+  position: relative;
+  z-index: 10;
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 1.5rem;
+  text-align: center;
+  gap: 2.5rem;
+}
+
+/* ---- Header block (title + description) ---- */
+.hero10-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 42rem;
+  gap: 1.25rem;
+}
+
+.hero10-title {
+  font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  color: var(--text-primary);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.hero10-title-highlight {
+  color: var(--primary);
+}
+
+.hero10-description {
+  max-width: 32rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  text-wrap: balance;
+}
+
+/* ---- CTAs block ---- */
+.hero10-ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero10-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero10-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  height: 2.75rem;
+  padding: 0 1.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.hero10-btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(196, 18, 48, 0.25);
+}
+
+.hero10-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  height: 2.75rem;
+  padding: 0 1.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.hero10-btn-outline:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.hero10-social-proof {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Fan images ---- */
+.hero10-fan-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero10-fan-card {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+  outline: 1px solid rgba(0, 0, 0, 0.08);
+  aspect-ratio: 4 / 5;
+}
+
+.hero10-fan-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card sizing & overlap */
+.hero10-fan-card--left {
+  width: 38%;
+  margin-right: -2rem;
+  z-index: 10;
+}
+
+.hero10-fan-card--center {
+  width: 42%;
+  z-index: 20;
+}
+
+.hero10-fan-card--right {
+  width: 38%;
+  margin-left: -2rem;
+  z-index: 10;
+}
+
+/* ---- Responsive ---- */
+@media (min-width: 640px) {
+  .hero10-inner {
+    padding: 7rem 1.5rem;
+    gap: 2.5rem;
+  }
+
+  .hero10-title {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero10-inner {
+    padding: 3rem 1rem;
+    gap: 2rem;
+  }
+
+  .hero10-fan-card--left,
+  .hero10-fan-card--right {
+    width: 35%;
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+
+  .hero10-fan-card--center {
+    width: 40%;
+  }
+
+  .hero10-cta-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero10-btn-primary,
+  .hero10-btn-outline {
+    width: 100%;
+  }
+}

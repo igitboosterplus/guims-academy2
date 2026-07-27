@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-grotesk@200,300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+:root {
+  --primary: #c41230;
+  /* Brighter Red from Logo */
+  --primary-hover: #a00f28;
+  --bg-light: #ffffff;
+  --bg-alt: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6c757d;
+  --accent-glow: rgba(196, 18, 48, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Geist', 'Outfit', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* Base Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--accent-glow);
+  }
+
+  50% {
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  100% {
+    box-shadow: 0 0 5px var(--accent-glow);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Components */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 0.9rem 2.2rem;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(196, 18, 48, 0.2);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.card:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
