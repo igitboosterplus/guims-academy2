@@ -1,4 +1,4 @@
-import logo from '../assets/logo Guims Acadeny.png';
+import logo from '../assets/logo Guims Acadeny.jpg';
 import { NAV_LINKS, FORMATIONS } from '../constants';
 import './footer.css';
 
