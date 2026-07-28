@@ -7,7 +7,7 @@ import {
 } from 'motion/react';
 import { Award, Users, BookOpen, ChevronRight, Trophy } from 'lucide-react';
 
-import guimsVideo from '../assets/guims2.mp4';
+import guimsImage from '../assets/hero.png';
 
 import './about.css';
 
@@ -98,13 +98,7 @@ const About = () => {
             }
           />
           <Card rotate={rotate} scale={scale}>
-            <video
-              src={guimsVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
+            <img src={guimsImage} alt="Guims Academy" />
           </Card>
         </div>
       </section>
