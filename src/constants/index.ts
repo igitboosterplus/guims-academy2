@@ -40,6 +40,7 @@ export const NAV_LINKS: NavLink[] = [
   { name: "Accueil", href: "#" },
   { name: "Nos Formations", href: "#formations" },
   { name: "Nos Lauréats", href: "#laureats" },
+  { name: "Actualités", href: "#actualites" },
   { name: "À propos", href: "#about" },
   { name: "Espace Etudiants", href: "#clients" },
   { name: "Contact", href: "#contact" }
