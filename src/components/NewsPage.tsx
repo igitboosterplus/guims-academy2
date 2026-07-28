@@ -1,4 +1,4 @@
-import { ArrowUpRight, CalendarDays, Facebook } from 'lucide-react';
+import { ArrowUpRight, CalendarDays, Share2 } from 'lucide-react';
 import secretariatDirectionImage from '../assets/secretariat-direction.jpg';
 import marketingDigitalImage from '../assets/marketing-digital.jpg';
 import secretariatComptableImage from '../assets/secretariat-comptable.jpg';
@@ -44,7 +44,7 @@ const NewsPage = () => {
         <div className="news-page-container">
           <div className="news-page-heading">
             <p className="news-page-eyebrow">
-              <Facebook size={16} aria-hidden="true" /> Actualités
+              <Share2 size={16} aria-hidden="true" /> Actualités
             </p>
             <h1>La vie de Guims Academy</h1>
             <p>
@@ -57,7 +57,7 @@ const NewsPage = () => {
             href="#"
             aria-label="Ouvrir la page Facebook de Guims Academy"
           >
-            <Facebook size={18} aria-hidden="true" />
+            <Share2 size={18} aria-hidden="true" />
             Facebook
             <ArrowUpRight size={16} aria-hidden="true" />
           </a>
