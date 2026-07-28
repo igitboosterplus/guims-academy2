@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { NAV_LINKS } from '../constants';
-import logo from '../assets/logo Guims Acadeny.png';
+import logo from '../assets/logo Guims Acadeny.jpg';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
