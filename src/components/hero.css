@@ -186,10 +186,18 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .hero10-inner {
     padding: 3rem 1rem;
     gap: 2rem;
+  }
+
+  .hero10-header {
+    gap: 1rem;
+  }
+
+  .hero10-description {
+    line-height: 1.55;
   }
 
   .hero10-fan-card--left,

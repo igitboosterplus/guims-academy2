@@ -5,7 +5,7 @@ import {
   useTransform,
   type MotionValue,
 } from 'motion/react';
-import { Award, Users, BookOpen, ChevronRight, Trophy } from 'lucide-react';
+import { Award, BookOpen, ChevronRight } from 'lucide-react';
 
 import guimsImage from '../assets/hero.png';
 
@@ -70,11 +70,13 @@ const About = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const scaleDimensions = isMobile ? [0.7, 0.9] : [1.05, 1];
+  const scaleDimensions = isMobile ? [1, 1] : [1.05, 1];
+  const rotateDimensions = isMobile ? [0, 0] : [20, 0];
+  const translateDimensions = isMobile ? [0, 0] : [0, -100];
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
+  const rotate = useTransform(scrollYProgress, [0, 1], rotateDimensions);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions);
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const translate = useTransform(scrollYProgress, [0, 1], translateDimensions);
 
   return (
     <>
@@ -127,13 +129,6 @@ const About = () => {
           <div className="about-stats-grid">
             <div className="about-stat-card">
               <div className="about-stat-icon">
-                <Users size={22} />
-              </div>
-              <div className="about-stat-number">2 000+</div>
-              <div className="about-stat-label">Étudiants formés</div>
-            </div>
-            <div className="about-stat-card">
-              <div className="about-stat-icon">
                 <BookOpen size={22} />
               </div>
               <div className="about-stat-number">4</div>
@@ -145,13 +140,6 @@ const About = () => {
               </div>
               <div className="about-stat-number">Certification internationale</div>
               <div className="about-stat-label">Diplômes reconnus</div>
-            </div>
-            <div className="about-stat-card">
-              <div className="about-stat-icon">
-                <Trophy size={22} />
-              </div>
-              <div className="about-stat-number">95%</div>
-              <div className="about-stat-label">Taux d'insertion</div>
             </div>
           </div>
         </div>
