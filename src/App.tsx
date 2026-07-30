@@ -20,24 +20,25 @@ function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
-      if (hash === '#laureats') {
+      const route = hash;
+      if (route === '#laureats') {
         setView('laureats');
         window.scrollTo({ top: 0, behavior: 'instant' as any });
-      } else if (hash === '#clients') {
+      } else if (route === '#clients') {
         setView('clients');
         window.scrollTo({ top: 0, behavior: 'instant' as any });
-      } else if (hash === '#formations') {
+      } else if (route === '#formations' || route === '#formations-particuliers' || route === '#formations-entreprises') {
         setView('formations');
         window.scrollTo({ top: 0, behavior: 'instant' as any });
-      } else if (hash === '#actualites') {
+      } else if (route === '#actualites') {
         setView('actualites');
         window.scrollTo({ top: 0, behavior: 'instant' as any });
       } else {
         setView('home');
         // If hash refers to a section, let's scroll to it after rendering home
-        if (hash && hash !== '#') {
+        if (route && route !== '#') {
           setTimeout(() => {
-            const element = document.querySelector(hash);
+            const element = document.querySelector(route);
             if (element) {
               element.scrollIntoView({ behavior: 'smooth' });
             }

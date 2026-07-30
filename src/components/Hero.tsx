@@ -154,11 +154,11 @@ const Hero = () => {
           className="hero10-ctas"
         >
           <div className="hero10-cta-row">
-            <a href="#formations" className="hero10-btn-primary">
+            <a href="#formations-particuliers" className="hero10-btn-primary">
               Commencer une formation
             </a>
-            <a href="#about" className="hero10-btn-outline">
-              En savoir plus
+            <a href="#formations-entreprises" className="hero10-btn-outline">
+              Former mon entreprise
             </a>
           </div>
         </motion.div>

@@ -3,8 +3,14 @@ import { Search, BookOpen, ArrowLeft } from 'lucide-react';
 import { FORMATIONS } from '../constants';
 import ElitePlanCard from './ElitePlanCard';
 
+const getInitialFilter = () => {
+  if (window.location.hash === '#formations-entreprises') return 'Entreprises & organisations';
+  if (window.location.hash === '#formations-particuliers') return 'Particuliers';
+  return 'All';
+};
+
 const FormationsPage = () => {
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState(getInitialFilter);
   const [search, setSearch] = useState('');
 
   const categories = ['All', 'Entreprises & organisations', 'Particuliers'];
