@@ -13,7 +13,7 @@ const AdminPanel = () => {
     checkAdmin();
     window.addEventListener('hashchange', checkAdmin);
 
-    setPromoText(localStorage.getItem('promoText') || "PROMO MERCREDI : <strong>-10 000 FCFA</strong> sur toutes les formations !");
+    setPromoText(localStorage.getItem('promoText') || "OFFRE MERCREDI : <strong>accompagnement privilégié</strong> pour votre inscription !");
 
     return () => window.removeEventListener('hashchange', checkAdmin);
   }, []);

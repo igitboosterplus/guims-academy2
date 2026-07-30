@@ -30,22 +30,17 @@ interface FormationCardProps {
   title: string;
   image: string;
   courses: string[];
-  price: number;
 }
 
-const FormationCard = ({ title, image, courses, price }: FormationCardProps) => {
-  const formatPrice = (val: number) => {
-    return val.toLocaleString('fr-FR') + ' FCFA';
-  };
-
-  const whatsappMessage = `Bonjour Guims Academy ! Je viens depuis le site web et je souhaite obtenir des informations et m'inscrire à la formation "${title}" au tarif de ${formatPrice(price)}.`;
+const FormationCard = ({ title, image, courses }: FormationCardProps) => {
+  const whatsappMessage = `Bonjour Guims Academy ! Je souhaite obtenir des informations et m'inscrire à la formation "${title}".`;
   const whatsappUrl = `https://wa.me/237655955615?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <ElitePlanCard
       imageUrl={image}
       title={title}
-      subtitle={`Formation • ${formatPrice(price)}`}
+      subtitle="Formation certifiante"
       description="Développez des compétences immédiatement utiles pour votre carrière, votre activité ou vos équipes."
       highlights={courses}
       ctaText="S'inscrire sur WhatsApp"

@@ -20,10 +20,6 @@ const FormationsPage = () => {
 
   const audienceGroups = ['Entreprises & organisations', 'Particuliers'];
 
-  const formatPrice = (val: number) => {
-    return val.toLocaleString('fr-FR') + ' FCFA';
-  };
-
   return (
     <div className="formations-page animate-fade-in">
       <div className="formations-hero">
@@ -85,7 +81,7 @@ const FormationsPage = () => {
                           key={formation.title}
                           imageUrl={formation.image}
                           title={formation.title}
-                          subtitle={`${formation.audience} • ${formatPrice(formation.price)}`}
+                          subtitle={formation.audience}
                           description={formation.audience === 'Particuliers'
                             ? "Développez des compétences concrètes pour votre parcours professionnel et vos projets."
                             : "Renforcez les compétences de vos équipes avec un programme adapté aux enjeux de votre organisation."}

@@ -9,10 +9,6 @@ interface PromotionModalProps {
 const PromotionModal = ({ isOpen, onClose }: PromotionModalProps) => {
   if (!isOpen) return null;
 
-  const formatPrice = (val: number) => {
-    return val.toLocaleString('fr-FR') + ' FCFA';
-  };
-
   return (
     <div className="modal-overlay animate-fade-in" onClick={onClose}>
       <div className="modal-content promo-modal animate-scale-up" onClick={(e) => e.stopPropagation()}>
@@ -26,14 +22,13 @@ const PromotionModal = ({ isOpen, onClose }: PromotionModalProps) => {
           </div>
           <h2>Promotion Spéciale du Mercredi</h2>
           <p>
-            Chaque mercredi, bénéficiez d'une réduction exceptionnelle de <strong>-10 000 FCFA</strong> sur toutes nos formations !
+            Chaque mercredi, bénéficiez d'un accompagnement privilégié pour votre inscription à l'une de nos formations.
           </p>
         </div>
 
         <div className="promo-courses-list">
           {FORMATIONS.map((formation, idx) => {
-            const promoPrice = formation.price - 10000;
-            const whatsappMessage = `Bonjour Guims Academy ! Je viens depuis le site web et je souhaite m'inscrire à la formation "${formation.title}" en profitant de la promotion du mercredi de ${formatPrice(promoPrice)} (au lieu de ${formatPrice(formation.price)}).`;
+            const whatsappMessage = `Bonjour Guims Academy ! Je viens depuis le site web et je souhaite m'inscrire à la formation "${formation.title}" en profitant de l'offre du mercredi.`;
             const whatsappUrl = `https://wa.me/237655955615?text=${encodeURIComponent(whatsappMessage)}`;
 
             return (
@@ -43,10 +38,6 @@ const PromotionModal = ({ isOpen, onClose }: PromotionModalProps) => {
                 </div>
                 <div className="promo-course-info">
                   <h3>{formation.title}</h3>
-                  <div className="promo-course-pricing">
-                    <span className="promo-original-price">{formatPrice(formation.price)}</span>
-                    <span className="promo-discounted-price">{formatPrice(promoPrice)}</span>
-                  </div>
                 </div>
                 <div className="promo-course-action">
                   <a 

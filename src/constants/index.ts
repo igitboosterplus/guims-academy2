@@ -49,85 +49,73 @@ export const FORMATIONS = [
     audience: "Entreprises & organisations",
     title: "Pilotage financier et trésorerie",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80",
-    courses: ["Gestion de trésorerie", "Tableaux de bord financiers", "Prévisions et reporting"],
-    price: 90000
+    courses: ["Gestion de trésorerie", "Tableaux de bord financiers", "Prévisions et reporting"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Management et performance des équipes",
     image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
-    courses: ["Leadership opérationnel", "Communication managériale", "Pilotage des objectifs"],
-    price: 90000
+    courses: ["Leadership opérationnel", "Communication managériale", "Pilotage des objectifs"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Organisation, structuration et stratégie de croissance",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
-    courses: ["Diagnostic organisationnel", "Processus et procédures", "Plan de croissance"],
-    price: 90000
+    courses: ["Diagnostic organisationnel", "Processus et procédures", "Plan de croissance"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Vente et développement commercial",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80",
-    courses: ["Prospection et négociation", "Parcours client", "Pilotage commercial"],
-    price: 90000
+    courses: ["Prospection et négociation", "Parcours client", "Pilotage commercial"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Fiscalité et optimisation légale",
     image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=900&q=80",
-    courses: ["Obligations fiscales", "Conformité", "Optimisation légale"],
-    price: 90000
+    courses: ["Obligations fiscales", "Conformité", "Optimisation légale"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Digitalisation et automatisation",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-    courses: ["Cartographie des processus", "Outils numériques", "Automatisation des tâches"],
-    price: 90000
+    courses: ["Cartographie des processus", "Outils numériques", "Automatisation des tâches"]
   },
   {
     audience: "Particuliers",
     title: "Intelligence artificielle",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80",
-    courses: ["Outils d'IA générative", "Automatisation personnelle", "Usages professionnels"],
-    price: 90000
+    courses: ["Outils d'IA générative", "Automatisation personnelle", "Usages professionnels"]
   },
   {
     audience: "Particuliers",
     title: "Marketing Digital",
     image: marketingDigitalImg,
-    courses: ["Administration de sites web", "SEO", "E-commerce", "Création de contenus", "Gestion des réseaux sociaux"],
-    price: 90000
+    courses: ["Administration de sites web", "SEO", "E-commerce", "Création de contenus", "Gestion des réseaux sociaux"]
   },
   {
     audience: "Particuliers",
     title: "Génie logiciel",
     image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80",
-    courses: ["Algorithmique", "Conception logicielle", "Tests et déploiement"],
-    price: 90000
+    courses: ["Algorithmique", "Conception logicielle", "Tests et déploiement"]
   },
   {
     audience: "Particuliers",
     title: "Développement web",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80",
-    courses: ["HTML, CSS et JavaScript", "Sites responsives", "Projets web"],
-    price: 90000
+    courses: ["HTML, CSS et JavaScript", "Sites responsives", "Projets web"]
   },
   {
     audience: "Particuliers",
     title: "Secrétariat de direction et comptable",
     image: secretariatDirectionImg,
-    courses: ["Gestion d'agenda", "Saisie comptable", "Outils bureautiques"],
-    price: 90000
+    courses: ["Gestion d'agenda", "Saisie comptable", "Outils bureautiques"]
   },
   {
     audience: "Particuliers",
     title: "Maintenance informatique",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
-    courses: ["Diagnostic matériel", "Maintenance systèmes", "Assistance utilisateurs"],
-    price: 90000
+    courses: ["Diagnostic matériel", "Maintenance systèmes", "Assistance utilisateurs"]
   }
 ];
 

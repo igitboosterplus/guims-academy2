@@ -281,21 +281,6 @@ nav.scrolled .nav-content {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.formation-pricing {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.75rem;
-}
-
-.price-label {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
 .btn-whatsapp-enroll {
   display: inline-flex;
   align-items: center;
@@ -331,12 +316,6 @@ nav.scrolled .nav-content {
 .nav-links a.nav-promo:hover {
   background: var(--primary);
   color: #fff !important;
-}
-
-.standard-price {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text-primary);
 }
 
 .promo-toggle-container {
@@ -1058,41 +1037,6 @@ nav.scrolled .nav-content {
   font-size: 0.9rem;
   color: var(--text-secondary);
   flex-grow: 1;
-}
-
-.promo-card-pricing-block {
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  padding-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.promo-card-price-label {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-}
-
-.promo-card-prices {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.promo-card-original {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  text-decoration: line-through;
-  opacity: 0.7;
-}
-
-.promo-card-discounted {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--primary);
 }
 
 .btn-whatsapp-promo-page {
@@ -2057,16 +2001,6 @@ nav.scrolled .nav-content {
   font-weight: 800;
   color: var(--text-primary);
   margin: 0;
-}
-
-.price-tag {
-  background: rgba(196, 18, 48, 0.06);
-  color: var(--primary);
-  font-size: 1.25rem;
-  font-weight: 800;
-  padding: 0.5rem 1.25rem;
-  border-radius: 8px;
-  white-space: nowrap;
 }
 
 .formation-description-sec {

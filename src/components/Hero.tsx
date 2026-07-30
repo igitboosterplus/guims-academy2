@@ -161,9 +161,6 @@ const Hero = () => {
               En savoir plus
             </a>
           </div>
-          <p className="hero10-social-proof">
-            Plus de 2 000 apprenants et professionnels accompagnés depuis 2020
-          </p>
         </motion.div>
 
         {/* Fan images */}

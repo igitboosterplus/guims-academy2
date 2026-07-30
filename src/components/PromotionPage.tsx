@@ -19,10 +19,6 @@ const PromotionPage = () => {
     );
   }
 
-  const formatPrice = (val: number) => {
-    return val.toLocaleString('fr-FR') + ' FCFA';
-  };
-
   return (
     <div className="promo-page-container animate-fade-in">
       <div className="promo-page-hero">
@@ -38,13 +34,13 @@ const PromotionPage = () => {
           
           <h1>La Promotion du Mercredi</h1>
           <p className="promo-hero-subtitle">
-            Tous les mercredis, profitez d'une remise exceptionnelle de <strong>-10 000 FCFA</strong> sur l'ensemble de nos formations d'excellence.
+            Tous les mercredis, profitez d'un accompagnement privilégié pour démarrer votre projet de formation.
           </p>
 
           <div className="promo-features-grid">
             <div className="promo-feat-item">
               <CheckCircle size={18} className="feat-icon" />
-              <span>Réduction immédiate de 10 000 F</span>
+              <span>Accompagnement privilégié pour votre inscription</span>
             </div>
             <div className="promo-feat-item">
               <CheckCircle size={18} className="feat-icon" />
@@ -60,12 +56,11 @@ const PromotionPage = () => {
 
       <div className="promo-page-content container">
         <h2 className="promo-section-title">Choisissez votre formation en Promotion</h2>
-        <p className="promo-section-desc">Cliquez sur la formation de votre choix pour initier votre inscription sur WhatsApp au tarif réduit.</p>
+        <p className="promo-section-desc">Choisissez votre formation pour initier votre inscription sur WhatsApp.</p>
         
         <div className="promo-grid-view">
           {FORMATIONS.map((formation, idx) => {
-            const promoPrice = formation.price - 10000;
-            const whatsappMessage = `Bonjour Guims Academy ! Je viens depuis la page promotion du site web et je souhaite m'inscrire à la formation "${formation.title}" au tarif réduit du mercredi de ${formatPrice(promoPrice)} (au lieu de ${formatPrice(formation.price)}).`;
+            const whatsappMessage = `Bonjour Guims Academy ! Je viens depuis la page promotion du site web et je souhaite m'inscrire à la formation "${formation.title}" en profitant de l'offre du mercredi.`;
             const whatsappUrl = `https://wa.me/237655955615?text=${encodeURIComponent(whatsappMessage)}`;
 
             return (
@@ -73,8 +68,8 @@ const PromotionPage = () => {
                 key={idx}
                 imageUrl={formation.image}
                 title={formation.title}
-                subtitle={`PROMO • ${formatPrice(promoPrice)} (au lieu de ${formatPrice(formation.price)})`}
-                description="Bénéficiez d'une réduction exclusive de -10 000 FCFA sur cette formation certifiante."
+                subtitle="Offre du mercredi"
+                description="Bénéficiez d'un accompagnement privilégié pour votre inscription à cette formation certifiante."
                 highlights={formation.courses}
                 ctaText="Profiter de l'offre"
                 onAction={() => window.open(whatsappUrl, '_blank')}
@@ -87,7 +82,7 @@ const PromotionPage = () => {
       <div className="promo-page-terms container">
         <div className="terms-box">
           <h4>Conditions d'éligibilité :</h4>
-          <p>La promotion de -10 000 FCFA est appliquée pour toutes les inscriptions enregistrées le mercredi. L'accompagnement personnalisé et l'accès au réseau d'emploi Guims Group sont entièrement maintenus avec l'offre promotionnelle.</p>
+          <p>L'offre du mercredi est réservée aux inscriptions initiées ou validées ce jour-là. L'accompagnement personnalisé et l'accès au réseau Guims Group sont entièrement maintenus.</p>
         </div>
       </div>
     </div>

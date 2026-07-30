@@ -31,7 +31,7 @@ const PromotionBanner = () => {
         <>
           <div className="promo-item highlight">
             <Sparkles size={14} className="promo-icon" style={{ color: '#ffcc00' }} />
-            <span>PROMO MERCREDI : <strong>-5 000 FCFA</strong> sur votre Inscriptions !</span>
+            <span>OFFRE MERCREDI : <strong>accompagnement privilégié</strong> pour votre inscription !</span>
           </div>
           <span className="promo-bullet">•</span>
         </>
