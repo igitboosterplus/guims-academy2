@@ -7,18 +7,18 @@ const FormationsPage = () => {
   const [filter, setFilter] = useState('All');
   const [search, setSearch] = useState('');
 
-  const categories = ['All', 'Secrétariat', 'Marketing'];
+  const categories = ['All', 'Entreprises & organisations', 'Particuliers'];
 
   const filteredFormations = FORMATIONS.filter(formation => {
-    const matchesCategory = filter === 'All' || 
-      (filter === 'Secrétariat' && formation.title.includes('Secrétariat')) ||
-      (filter === 'Marketing' && formation.title.includes('Marketing'));
+    const matchesCategory = filter === 'All' || formation.audience === filter;
       
     const matchesSearch = formation.title.toLowerCase().includes(search.toLowerCase()) ||
       formation.courses.some(c => c.toLowerCase().includes(search.toLowerCase()));
 
     return matchesCategory && matchesSearch;
   });
+
+  const audienceGroups = ['Entreprises & organisations', 'Particuliers'];
 
   const formatPrice = (val: number) => {
     return val.toLocaleString('fr-FR') + ' FCFA';
@@ -37,7 +37,7 @@ const FormationsPage = () => {
           </div>
           <h1>Nos Formations Certifiantes</h1>
           <p className="formations-subtitle">
-            Découvrez nos formations professionnelles intensives, conçues par des experts pour vous donner des compétences pratiques immédiatement applicables sur le marché du travail.
+            Découvrez nos programmes conçus pour développer les compétences des particuliers et accompagner la performance des entreprises et organisations.
           </p>
         </div>
       </div>
@@ -67,22 +67,36 @@ const FormationsPage = () => {
         </div>
 
         {filteredFormations.length > 0 ? (
-          <div className="formations-grid">
-            {filteredFormations.map((formation, idx) => {
-              const whatsappMessage = `Bonjour Guims Academy ! Je suis intéressé(e) par la formation "${formation.title}" et je souhaite m'inscrire.`;
-              const whatsappUrl = `https://wa.me/237655955615?text=${encodeURIComponent(whatsappMessage)}`;
+          <div className="formations-catalog-groups">
+            {audienceGroups.map((audience) => {
+              const formations = filteredFormations.filter((formation) => formation.audience === audience);
+              if (formations.length === 0) return null;
 
               return (
-                <ElitePlanCard
-                  key={idx}
-                  imageUrl={formation.image}
-                  title={formation.title}
-                  subtitle={`Formation • ${formatPrice(formation.price)}`}
-                  description="Développez des compétences professionnelles de haut niveau en 3 mois de pratique intensive."
-                  highlights={formation.courses}
-                  ctaText="S'inscrire via WhatsApp"
-                  onAction={() => window.open(whatsappUrl, '_blank')}
-                />
+                <section key={audience} className="formations-catalog-group">
+                  <h2>{audience}</h2>
+                  <div className="formations-grid">
+                    {formations.map((formation) => {
+                      const whatsappMessage = `Bonjour Guims Academy ! Je suis intéressé(e) par la formation "${formation.title}" et je souhaite m'inscrire.`;
+                      const whatsappUrl = `https://wa.me/237655955615?text=${encodeURIComponent(whatsappMessage)}`;
+
+                      return (
+                        <ElitePlanCard
+                          key={formation.title}
+                          imageUrl={formation.image}
+                          title={formation.title}
+                          subtitle={`${formation.audience} • ${formatPrice(formation.price)}`}
+                          description={formation.audience === 'Particuliers'
+                            ? "Développez des compétences concrètes pour votre parcours professionnel et vos projets."
+                            : "Renforcez les compétences de vos équipes avec un programme adapté aux enjeux de votre organisation."}
+                          highlights={formation.courses}
+                          ctaText="S'inscrire via WhatsApp"
+                          onAction={() => window.open(whatsappUrl, '_blank')}
+                        />
+                      );
+                    })}
+                  </div>
+                </section>
               );
             })}
           </div>

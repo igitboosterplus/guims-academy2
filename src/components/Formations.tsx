@@ -8,11 +8,11 @@ const Formations = () => {
         <div className="section-header">
           <span className="badge">Nos Domaines</span>
           <h2 className="section-title">Domaines de Formation</h2>
-          <p>Des programmes d'excellence conçus pour propulser votre carrière.</p>
+          <p>Des programmes pratiques pour les particuliers et les entreprises qui souhaitent développer des compétences durables.</p>
         </div>
         
         <div className="formations-grid">
-          {FORMATIONS.map((formation, idx) => (
+          {FORMATIONS.filter((formation) => formation.audience === 'Particuliers').slice(0, 4).map((formation, idx) => (
             <FormationCard key={idx} {...formation} />
           ))}
         </div>
@@ -26,6 +26,7 @@ const Formations = () => {
 };
 
 interface FormationCardProps {
+  audience: string;
   title: string;
   image: string;
   courses: string[];
@@ -45,7 +46,7 @@ const FormationCard = ({ title, image, courses, price }: FormationCardProps) => 
       imageUrl={image}
       title={title}
       subtitle={`Formation • ${formatPrice(price)}`}
-      description="Développez des compétences professionnelles de haut niveau en 3 mois de pratique intensive."
+      description="Développez des compétences immédiatement utiles pour votre carrière, votre activité ou vos équipes."
       highlights={courses}
       ctaText="S'inscrire sur WhatsApp"
       onAction={() => window.open(whatsappUrl, '_blank')}

@@ -143,8 +143,7 @@ const Hero = () => {
           </h1>
           <p className="hero10-description">
             <Balancer>
-              Votre cabinet de formation professionnelle avec diplome internationale. Développez vos compétences auprès d'experts
-              du domaine.
+              Formations professionnelles certifiantes pour les particuliers et les entreprises. Développez les compétences qui font avancer vos projets.
             </Balancer>
           </p>
         </motion.div>
@@ -163,7 +162,7 @@ const Hero = () => {
             </a>
           </div>
           <p className="hero10-social-proof">
-            Rejoint par 2 000+ étudiants depuis 2020
+            Plus de 2 000 apprenants et professionnels accompagnés depuis 2020
           </p>
         </motion.div>
 

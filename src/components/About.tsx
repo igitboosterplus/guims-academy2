@@ -111,9 +111,9 @@ const About = () => {
           <div className="about-details-text">
             <h2>L'excellence au service de votre avenir</h2>
             <p className="about-highlight">
-              Guims Academy est le centre de formation professionnelle du groupe.
-              Nous proposons des formations certifiantes, pratiques et adaptées aux
-              besoins du marché africain et mondial.
+              Guims Academy accompagne les particuliers et les entreprises avec des
+              formations certifiantes, pratiques et adaptées aux besoins du marché
+              africain et mondial.
             </p>
             <p className="about-subtext">
               Notre mission est de combler le fossé entre la formation théorique et

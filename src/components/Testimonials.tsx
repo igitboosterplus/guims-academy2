@@ -7,8 +7,8 @@ const Testimonials = () => {
       <div className="container">
         <div className="section-header">
           <span className="badge">Témoignages</span>
-          <h2 className="section-title">Ce que disent nos étudiants</h2>
-          <p>Leur succès est notre plus grande fierté.</p>
+          <h2 className="section-title">Ce que disent nos apprenants</h2>
+          <p>Leur réussite professionnelle est notre plus grande fierté.</p>
         </div>
         
         <div className="testimonials-grid">

@@ -27,9 +27,9 @@ const ClientsPage = () => {
             <Lock size={20} />
             <span>Portail Sécurisé</span>
           </div>
-          <h1>Espace Clients & Étudiants</h1>
+          <h1>Espace Clients & Apprenants</h1>
           <p className="laureats-subtitle">
-            Accédez à votre espace personnel pour suivre vos cours, consulter votre emploi du temps, vos évaluations et télécharger vos documents de formation.
+            Un accès dédié aux particuliers et aux collaborateurs en formation pour suivre les parcours, consulter les calendriers et télécharger les documents utiles.
           </p>
         </div>
       </div>
@@ -49,7 +49,7 @@ const ClientsPage = () => {
 
             <form onSubmit={handleLogin} className="login-form">
               <div className="login-input-group">
-                <label>Adresse e-mail étudiant :</label>
+                <label>Adresse e-mail de formation :</label>
                 <div className="input-with-icon">
                   <Mail size={18} className="input-icon" />
                   <input 
@@ -88,8 +88,8 @@ const ClientsPage = () => {
 
           {/* Features Column */}
           <div className="portal-features-column">
-            <h2>Que permet votre espace étudiant ?</h2>
-            <p className="features-desc">Un portail numérique tout-en-un pour faciliter votre apprentissage et suivre votre progression administrative.</p>
+            <h2>Que permet votre espace apprenant ?</h2>
+            <p className="features-desc">Un portail numérique pour accompagner chaque parcours individuel ou parcours de formation en entreprise.</p>
 
             <div className="feature-item-row">
               <div className="feature-icon-circle">

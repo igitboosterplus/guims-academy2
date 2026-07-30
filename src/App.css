@@ -459,20 +459,19 @@ nav.scrolled .nav-content {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 .service-card {
   height: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 1.5rem;
+  flex-direction: column;
+  overflow: hidden;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 12px;
-  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  padding: 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -483,31 +482,23 @@ nav.scrolled .nav-content {
   box-shadow: 0 20px 40px rgba(196, 18, 48, 0.05);
 }
 
-.service-icon-wrapper {
-  color: var(--primary);
-  background: rgba(196, 18, 48, 0.06);
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(196, 18, 48, 0.1);
-  flex-shrink: 0;
+.service-card-image {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
 .service-content-wrapper {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  padding: 1.5rem;
 }
 
-.service-card:hover .service-icon-wrapper {
-  background: var(--primary);
-  color: #ffffff;
-  transform: rotate(5deg) scale(1.05);
-  box-shadow: 0 8px 20px rgba(196, 18, 48, 0.2);
-}
+.service-card:hover .service-card-image { transform: scale(1.04); }
 
 .service-card h3 {
   font-size: 1.35rem;
@@ -551,13 +542,13 @@ nav.scrolled .nav-content {
 
 @media (max-width: 900px) {
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
 
-  .service-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card-image { height: 11rem; }
 }
 
 
@@ -1972,6 +1963,20 @@ nav.scrolled .nav-content {
 .formations-content {
   padding-top: 4rem;
   padding-bottom: 5rem;
+}
+
+.formations-catalog-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.formations-catalog-group h2 {
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(196, 18, 48, 0.16);
+  color: var(--text-primary);
+  font-size: 1.8rem;
 }
 
 .formations-grid-detailed {

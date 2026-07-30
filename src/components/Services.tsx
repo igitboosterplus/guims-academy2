@@ -1,35 +1,41 @@
-import { Award, Network, Compass, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
+import secretariatDirectionImg from '../assets/secretariat-direction.jpg';
+import marketingDigitalImg from '../assets/marketing-digital.jpg';
+import secretariatComptableImg from '../assets/secretariat-comptable.jpg';
 
 const Services = () => {
   const servicesData = [
     {
-      icon: <Award className="service-icon-svg" size={26} />,
-      title: "Certifications Internationales",
-      description: "Nos formations préparent aux certifications les plus reconnues sur le marché mondial pour garantir vos compétences.",
+      image: secretariatDirectionImg,
+      imageAlt: "Professionnels en formation",
+      title: "Formations certifiantes",
+      description: "Des parcours pratiques pour renforcer les compétences des particuliers et développer les équipes en entreprise.",
       bullets: [
-        "Reconnaissance globale en entreprise",
-        "Préparation rigoureuse aux standards internationaux",
-        "Valorisation immédiate de votre profil"
+        "Programmes adaptés aux métiers",
+        "Certification valorisable",
+        "Accompagnement par des experts"
       ]
     },
     {
-      icon: <Network className="service-icon-svg" size={26} />,
-      title: "Réseau & Offres d'Emploi",
-      description: "Guims Academy met à votre disposition des canaux et groupes de diffusion exclusifs publiant régulièrement des opportunités.",
+      image: marketingDigitalImg,
+      imageAlt: "Atelier de marketing digital",
+      title: "Compétences pour la performance",
+      description: "Des ateliers concrets pour gagner en autonomie, faire évoluer une carrière ou soutenir la transformation de votre entreprise.",
       bullets: [
-        "Accès aux groupes dédiés de partage d'offres",
-        "Opportunités régulières de stage et d'emploi",
-        "Mise en relation directe avec les entreprises"
+        "Mises en situation réelles",
+        "Outils utilisés en entreprise",
+        "Résultats applicables immédiatement"
       ]
     },
     {
-      icon: <Compass className="service-icon-svg" size={26} />,
-      title: "Coaching d'Insertion Directe",
-      description: "Nous assurons votre insertion par des modules intensifs de préparation à la vie active.",
+      image: secretariatComptableImg,
+      imageAlt: "Professionnel travaillant sur des outils de gestion",
+      title: "Accompagnement sur mesure",
+      description: "Un suivi adapté à votre projet professionnel, à votre reconversion ou aux besoins de formation de vos collaborateurs.",
       bullets: [
-        "Ateliers pratiques de CV de haut niveau",
-        "Simulations réelles d'entretiens",
-        "Conseils de création de projet (auto-emploi)"
+        "Conseils personnalisés",
+        "Formats individuels ou en équipe",
+        "Passerelle vers l'emploi et les projets"
       ]
     }
   ];
@@ -40,15 +46,13 @@ const Services = () => {
         <div className="services-header">
           <span className="badge">Nos Engagements</span>
           <h2 className="section-title">Pourquoi Choisir Guims Academy ?</h2>
-          <p>Un encadrement d'excellence et des garanties concrètes pour propulser votre réussite professionnelle.</p>
+          <p>Des parcours concrets pour faire progresser les particuliers et renforcer les compétences des entreprises.</p>
         </div>
 
         <div className="services-grid">
           {servicesData.map((service, idx) => (
-            <div key={idx} className="card service-card">
-              <div className="service-icon-wrapper">
-                {service.icon}
-              </div>
+            <article key={idx} className="service-card">
+              <img className="service-card-image" src={service.image} alt={service.imageAlt} />
               <div className="service-content-wrapper">
                 <h3>{service.title}</h3>
                 <p className="service-desc">{service.description}</p>
@@ -61,7 +65,7 @@ const Services = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

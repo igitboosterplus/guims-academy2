@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-col-brand">
           <img src={logo} alt="Guims Academy" className="footer-logo" />
           <p className="footer-brand-desc">
-            Guims Academy forme les professionnels de demain. Des programmes intensifs et 100% pratiques pour propulser votre carrière.
+            Guims Academy accompagne particuliers et entreprises avec des programmes pratiques pour développer les compétences d'aujourd'hui et de demain.
           </p>
           <div className="footer-brand-meta">
             <span>Guims Academy fait partie de <strong>Guims Group</strong>.</span>
@@ -50,7 +50,7 @@ const Footer = () => {
             </li>
             <li>
               <span className="contact-label">Téléphone :</span>
-              <a href="tel:+237655955615">+237 655 955 615</a>
+              <a href="tel:+237657293923">+237 657 293 923</a> - <a href="tel:+237696299916">+237 696 299 916</a>
             </li>
             <li>
               <span className="contact-label">Localisation :</span>
