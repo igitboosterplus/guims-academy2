@@ -3,6 +3,7 @@ import './elite-card-plan.css';
 
 interface ElitePlanCardProps {
   imageUrl: string;
+  imagePosition?: string;
   title: string;
   subtitle: string;
   description: string;
@@ -13,6 +14,7 @@ interface ElitePlanCardProps {
 
 export const ElitePlanCard = ({
   imageUrl,
+  imagePosition,
   title,
   subtitle,
   description,
@@ -32,7 +34,12 @@ export const ElitePlanCard = ({
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.45 }}
         >
-          <img src={imageUrl} alt={title} className="elite-card-img" />
+          <img
+            src={imageUrl}
+            alt={title}
+            className="elite-card-img"
+            style={imagePosition ? { objectPosition: imagePosition } : undefined}
+          />
         </motion.div>
         <div className="elite-card-gradient" />
       </div>

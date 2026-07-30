@@ -102,7 +102,7 @@ export const CONTACT_INFO = {
 
 export const TESTIMONIALS = [
   {
-    name: "Jean Dupont",
+    name: "Priso Daniel",
     role: "Secrétaire de Direction",
     text: "Grâce à Guims Academy, j'ai obtenu une formation de qualité et un accompagnement sur mesure qui m'a ouvert les portes de l'emploi.",
     avatar: avatarJean
@@ -114,9 +114,10 @@ export const TESTIMONIALS = [
     avatar: avatarMarie
   },
   {
-    name: "Alain Kotto",
+    name: "Alain Essomba",
     role: "Assistant Comptable",
     text: `Une école sérieuse qui tient ses promesses. La rentrée du ${intake.short.toLowerCase()} est une opportunité à ne pas manquer pour se professionnaliser.`,
-    avatar: avatarAlain
+    avatar: avatarAlain,
+    imagePosition: "72% center"
   }
 ];

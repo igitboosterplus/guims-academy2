@@ -16,6 +16,7 @@ const Testimonials = () => {
             <ElitePlanCard
               key={idx}
               imageUrl={t.avatar}
+              imagePosition={t.imagePosition}
               title={t.name}
               subtitle={t.role}
               description={`"${t.text}"`}

@@ -46,7 +46,7 @@ const Footer = () => {
           <ul className="footer-list contact-list">
             <li>
               <span className="contact-label">Email :</span>
-              <a href="mailto:contact@guimsacademy.com">contact@guimsacademy.com</a>
+              <a href="mailto:contact@guimsacademy.com">contacts@guimsacademy.com</a>
             </li>
             <li>
               <span className="contact-label">Téléphone :</span>

@@ -131,15 +131,19 @@ const About = () => {
               <div className="about-stat-icon">
                 <BookOpen size={22} />
               </div>
-              <div className="about-stat-number">4</div>
-              <div className="about-stat-label">Filières certifiantes</div>
+              <div className="about-stat-content">
+                <div className="about-stat-number">4</div>
+                <div className="about-stat-label">Filières certifiantes</div>
+              </div>
             </div>
             <div className="about-stat-card">
               <div className="about-stat-icon">
                 <Award size={22} />
               </div>
-              <div className="about-stat-number">Certification internationale</div>
-              <div className="about-stat-label">Diplômes reconnus</div>
+              <div className="about-stat-content">
+                <div className="about-stat-number">Certification internationale</div>
+                <div className="about-stat-label">Diplômes reconnus</div>
+              </div>
             </div>
           </div>
         </div>

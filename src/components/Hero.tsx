@@ -143,8 +143,7 @@ const Hero = () => {
           </h1>
           <p className="hero10-description">
             <Balancer>
-              Guims Academy vous propose des formations certifiantes adaptées au
-              marché international. Développez vos compétences auprès d'experts
+              Votre cabinet de formation professionnelle avec diplome internationale. Développez vos compétences auprès d'experts
               du domaine.
             </Balancer>
           </p>
