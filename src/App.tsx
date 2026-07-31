@@ -12,10 +12,12 @@ import LaureatsPage from './components/LaureatsPage';
 import ClientsPage from './components/ClientsPage';
 import FormationsPage from './components/FormationsPage';
 import NewsPage from './components/NewsPage';
+import ContactPage from './components/ContactPage';
+import AboutPage from './components/AboutPage';
 import './App.css';
 
 function App() {
-  const [view, setView] = useState<'home' | 'laureats' | 'clients' | 'formations' | 'actualites'>('home');
+  const [view, setView] = useState<'home' | 'laureats' | 'clients' | 'formations' | 'actualites' | 'contact' | 'about'>('home');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -32,6 +34,12 @@ function App() {
         window.scrollTo({ top: 0, behavior: 'instant' as any });
       } else if (route === '#actualites') {
         setView('actualites');
+        window.scrollTo({ top: 0, behavior: 'instant' as any });
+      } else if (route === '#contact') {
+        setView('contact');
+        window.scrollTo({ top: 0, behavior: 'instant' as any });
+      } else if (route === '#about' || route === '#apropos') {
+        setView('about');
         window.scrollTo({ top: 0, behavior: 'instant' as any });
       } else {
         setView('home');
@@ -65,6 +73,8 @@ function App() {
       {view === 'clients' && <ClientsPage />}
       {view === 'formations' && <FormationsPage />}
       {view === 'actualites' && <NewsPage />}
+      {view === 'contact' && <ContactPage />}
+      {view === 'about' && <AboutPage />}
       
       {view === 'home' && (
         <>

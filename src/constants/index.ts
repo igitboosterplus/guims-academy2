@@ -48,13 +48,13 @@ export const FORMATIONS = [
   {
     audience: "Entreprises & organisations",
     title: "Pilotage financier et trésorerie",
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1573708522857-87fc83d83aea?auto=format&fit=crop&w=900&q=80",
     courses: ["Gestion de trésorerie", "Tableaux de bord financiers", "Prévisions et reporting"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Management et performance des équipes",
-    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
     courses: ["Leadership opérationnel", "Communication managériale", "Pilotage des objectifs"]
   },
   {
@@ -66,7 +66,7 @@ export const FORMATIONS = [
   {
     audience: "Entreprises & organisations",
     title: "Vente et développement commercial",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
     courses: ["Prospection et négociation", "Parcours client", "Pilotage commercial"]
   },
   {
