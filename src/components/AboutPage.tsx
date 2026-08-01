@@ -1,19 +1,8 @@
-import { useRef, useEffect, useState } from 'react';
 import { Award, BookOpen, Users, Target, ArrowLeft } from 'lucide-react';
 import guimsImage from '../assets/hero.png';
 import './about-page.css';
 
 const AboutPage = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
   return (
     <div className="about-page animate-fade-in">
       <div className="about-page-hero">
