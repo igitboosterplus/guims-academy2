@@ -1,5 +1,7 @@
 import secretariatDirectionImg from '../assets/secretariat-direction.jpg';
 import marketingDigitalImg from '../assets/marketing-digital.jpg';
+import secretariatComptableImg from '../assets/secretariat-comptable.jpg';
+import secretariatBureautiqueImg from '../assets/secretariat-bureautique.jpg';
 
 import avatarJean from '../assets/avatar-jean.jpg';
 import avatarMarie from '../assets/avatar-marie.jpg';
@@ -48,43 +50,43 @@ export const FORMATIONS = [
   {
     audience: "Entreprises & organisations",
     title: "Pilotage financier et trésorerie",
-    image: "https://source.unsplash.com/1200x800/?african,finance,business,office&sig=11",
+    image: secretariatComptableImg,
     courses: ["Gestion de trésorerie", "Tableaux de bord financiers", "Prévisions et reporting"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Management et performance des équipes",
-    image: "https://source.unsplash.com/1200x800/?african,team,meeting,leadership&sig=12",
+    image: secretariatBureautiqueImg,
     courses: ["Leadership opérationnel", "Communication managériale", "Pilotage des objectifs"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Organisation, structuration et stratégie de croissance",
-    image: "https://source.unsplash.com/1200x800/?african,strategy,planning,business&sig=13",
+    image: secretariatDirectionImg,
     courses: ["Diagnostic organisationnel", "Processus et procédures", "Plan de croissance"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Vente et développement commercial",
-    image: "https://source.unsplash.com/1200x800/?african,sales,client,business&sig=14",
+    image: marketingDigitalImg,
     courses: ["Prospection et négociation", "Parcours client", "Pilotage commercial"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Fiscalité et optimisation légale",
-    image: "https://source.unsplash.com/1200x800/?african,accounting,tax,office&sig=15",
+    image: secretariatComptableImg,
     courses: ["Obligations fiscales", "Conformité", "Optimisation légale"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Digitalisation et automatisation",
-    image: "https://source.unsplash.com/1200x800/?african,digital,technology,workspace&sig=16",
+    image: marketingDigitalImg,
     courses: ["Cartographie des processus", "Outils numériques", "Automatisation des tâches"]
   },
   {
     audience: "Particuliers",
     title: "Intelligence artificielle",
-    image: "https://source.unsplash.com/1200x800/?african,ai,technology,student&sig=17",
+    image: marketingDigitalImg,
     courses: ["Outils d'IA générative", "Automatisation personnelle", "Usages professionnels"]
   },
   {
@@ -96,13 +98,13 @@ export const FORMATIONS = [
   {
     audience: "Particuliers",
     title: "Génie logiciel",
-    image: "https://source.unsplash.com/1200x800/?african,software,developer,coding&sig=18",
+    image: secretariatBureautiqueImg,
     courses: ["Algorithmique", "Conception logicielle", "Tests et déploiement"]
   },
   {
     audience: "Particuliers",
     title: "Développement web",
-    image: "https://source.unsplash.com/1200x800/?african,web,development,laptop&sig=19",
+    image: secretariatDirectionImg,
     courses: ["HTML, CSS et JavaScript", "Sites responsives", "Projets web"]
   },
   {
@@ -114,7 +116,7 @@ export const FORMATIONS = [
   {
     audience: "Particuliers",
     title: "Maintenance informatique",
-    image: "https://source.unsplash.com/1200x800/?african,it,maintenance,computer&sig=20",
+    image: secretariatBureautiqueImg,
     courses: ["Diagnostic matériel", "Maintenance systèmes", "Assistance utilisateurs"]
   }
 ];
