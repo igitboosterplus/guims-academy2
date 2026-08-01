@@ -48,43 +48,43 @@ export const FORMATIONS = [
   {
     audience: "Entreprises & organisations",
     title: "Pilotage financier et trésorerie",
-    image: "https://images.unsplash.com/photo-1573708522857-87fc83d83aea?auto=format&fit=crop&w=900&q=80",
+    image: "https://source.unsplash.com/1200x800/?african,finance,business,office&sig=11",
     courses: ["Gestion de trésorerie", "Tableaux de bord financiers", "Prévisions et reporting"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Management et performance des équipes",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+    image: "https://source.unsplash.com/1200x800/?african,team,meeting,leadership&sig=12",
     courses: ["Leadership opérationnel", "Communication managériale", "Pilotage des objectifs"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Organisation, structuration et stratégie de croissance",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+    image: "https://source.unsplash.com/1200x800/?african,strategy,planning,business&sig=13",
     courses: ["Diagnostic organisationnel", "Processus et procédures", "Plan de croissance"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Vente et développement commercial",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+    image: "https://source.unsplash.com/1200x800/?african,sales,client,business&sig=14",
     courses: ["Prospection et négociation", "Parcours client", "Pilotage commercial"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Fiscalité et optimisation légale",
-    image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=900&q=80",
+    image: "https://source.unsplash.com/1200x800/?african,accounting,tax,office&sig=15",
     courses: ["Obligations fiscales", "Conformité", "Optimisation légale"]
   },
   {
     audience: "Entreprises & organisations",
     title: "Digitalisation et automatisation",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+    image: "https://source.unsplash.com/1200x800/?african,digital,technology,workspace&sig=16",
     courses: ["Cartographie des processus", "Outils numériques", "Automatisation des tâches"]
   },
   {
     audience: "Particuliers",
     title: "Intelligence artificielle",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80",
+    image: "https://source.unsplash.com/1200x800/?african,ai,technology,student&sig=17",
     courses: ["Outils d'IA générative", "Automatisation personnelle", "Usages professionnels"]
   },
   {
@@ -96,13 +96,13 @@ export const FORMATIONS = [
   {
     audience: "Particuliers",
     title: "Génie logiciel",
-    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80",
+    image: "https://source.unsplash.com/1200x800/?african,software,developer,coding&sig=18",
     courses: ["Algorithmique", "Conception logicielle", "Tests et déploiement"]
   },
   {
     audience: "Particuliers",
     title: "Développement web",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80",
+    image: "https://source.unsplash.com/1200x800/?african,web,development,laptop&sig=19",
     courses: ["HTML, CSS et JavaScript", "Sites responsives", "Projets web"]
   },
   {
@@ -114,7 +114,7 @@ export const FORMATIONS = [
   {
     audience: "Particuliers",
     title: "Maintenance informatique",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+    image: "https://source.unsplash.com/1200x800/?african,it,maintenance,computer&sig=20",
     courses: ["Diagnostic matériel", "Maintenance systèmes", "Assistance utilisateurs"]
   }
 ];
