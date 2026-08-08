@@ -5,9 +5,9 @@ import {
   useTransform,
   type MotionValue,
 } from 'motion/react';
-import { Award, BookOpen, ChevronRight } from 'lucide-react';
+import { Users, Briefcase, Laptop, ChevronRight } from 'lucide-react';
 
-import guimsImage from '../assets/hero.png';
+import guimsVideo from '../assets/guims2.mp4';
 
 import './about.css';
 
@@ -100,7 +100,7 @@ const About = () => {
             }
           />
           <Card rotate={rotate} scale={scale}>
-            <img src={guimsImage} alt="Guims Academy" />
+            <video src={guimsVideo} controls autoPlay loop style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </Card>
         </div>
       </section>
@@ -111,15 +111,13 @@ const About = () => {
           <div className="about-details-text">
             <h2>L'excellence au service de votre avenir</h2>
             <p className="about-highlight">
-              Guims Academy accompagne les particuliers et les entreprises avec des
-              formations certifiantes, pratiques et adaptées aux besoins du marché
-              africain et mondial.
+              Guims Academy accompagne les entreprises, forme les particuliers, et propose des parcours en ligne pour répondre aux exigences du marché africain et mondial.
             </p>
             <p className="about-subtext">
               Notre mission est de combler le fossé entre la formation théorique et
-              les exigences réelles des entreprises. Nous forgeons les leaders de
+              les exigences réelles du marché. Nous forgeons les leaders de
               demain à travers une pédagogie innovante et un accompagnement
-              personnalisé.
+              personnalisé, quel que soit votre profil.
             </p>
             <button className="btn-text">
               Voir plus <ChevronRight size={18} />
@@ -129,20 +127,29 @@ const About = () => {
           <div className="about-stats-grid">
             <div className="about-stat-card">
               <div className="about-stat-icon">
-                <BookOpen size={22} />
+                <Users size={22} />
               </div>
               <div className="about-stat-content">
-                <div className="about-stat-number">4</div>
-                <div className="about-stat-label">Filières certifiantes</div>
+                <div className="about-stat-number" style={{ fontSize: '1.25rem' }}>Particuliers</div>
+                <div className="about-stat-label">Formations certifiantes en présentiel</div>
               </div>
             </div>
             <div className="about-stat-card">
               <div className="about-stat-icon">
-                <Award size={22} />
+                <Briefcase size={22} />
               </div>
               <div className="about-stat-content">
-                <div className="about-stat-number">Certification internationale</div>
-                <div className="about-stat-label">Diplômes reconnus</div>
+                <div className="about-stat-number" style={{ fontSize: '1.25rem' }}>Entreprises</div>
+                <div className="about-stat-label">Formations sur mesure B2B</div>
+              </div>
+            </div>
+            <div className="about-stat-card">
+              <div className="about-stat-icon">
+                <Laptop size={22} />
+              </div>
+              <div className="about-stat-content">
+                <div className="about-stat-number" style={{ fontSize: '1.25rem' }}>En Ligne</div>
+                <div className="about-stat-label">Parcours 100% e-learning</div>
               </div>
             </div>
           </div>

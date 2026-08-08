@@ -10,6 +10,10 @@ interface ElitePlanCardProps {
   highlights?: string[];
   ctaText?: string;
   onAction?: () => void;
+  secondaryAction?: {
+    text: string;
+    onClick: () => void;
+  };
 }
 
 export const ElitePlanCard = ({
@@ -21,6 +25,7 @@ export const ElitePlanCard = ({
   highlights = [],
   ctaText = "S'inscrire",
   onAction,
+  secondaryAction,
 }: ElitePlanCardProps) => {
   return (
     <motion.div
@@ -60,13 +65,18 @@ export const ElitePlanCard = ({
           </ul>
         )}
 
-        {onAction && (
-          <div className="elite-card-action">
+        <div className="elite-card-actions">
+          {onAction && (
             <button onClick={onAction} className="elite-card-btn">
               {ctaText}
             </button>
-          </div>
-        )}
+          )}
+          {secondaryAction && (
+            <button onClick={secondaryAction.onClick} className="elite-card-btn-secondary">
+              {secondaryAction.text}
+            </button>
+          )}
+        </div>
       </div>
     </motion.div>
   );

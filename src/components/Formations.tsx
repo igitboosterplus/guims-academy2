@@ -8,7 +8,7 @@ const Formations = () => {
         <div className="section-header">
           <span className="badge">Nos Domaines</span>
           <h2 className="section-title">Domaines de Formation</h2>
-          <p>Des programmes pratiques pour les particuliers et les entreprises qui souhaitent développer des compétences durables.</p>
+          <p>Des programmes pratiques pour propulser les particuliers, accompagner les entreprises, et des parcours en ligne pour apprendre à votre rythme.</p>
         </div>
         
         <div className="formations-grid">

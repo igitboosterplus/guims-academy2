@@ -1,78 +1,74 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Award, Star, GraduationCap, Search, ArrowLeft, BookOpen, Briefcase, Sparkles, ChevronRight, Network, ExternalLink } from 'lucide-react';
+import { supabase } from '../lib/supabase';
+import type { Laureat } from '../lib/types';
 import ElitePlanCard from './ElitePlanCard';
 import avatarJean from '../assets/avatar-jean.jpg';
 import avatarMarie from '../assets/avatar-marie.jpg';
 import avatarAlain from '../assets/avatar-alain.jpg';
+import { useEffect } from 'react';
 
-const LAUREATS_DATA = [
+// Static fallback data
+const STATIC_LAUREATS = [
   {
-    name: "Priso Daniel",
-    formation: "Secrétariat de Direction",
-    promotion: "Promotion 2024",
-    status: "Actuellement Assistant Administratif",
-    avatar: avatarJean,
-    socialProfileUrl: "https://www.linkedin.com/search/results/people/?keywords=Jean%20Dupont",
+    id: '1', name: "Priso Daniel", formation: "Secrétariat de Direction", promotion: "Promotion 2024",
+    status: "Actuellement Assistant Administratif", avatar_url: avatarJean,
+    social_profile_url: "https://www.linkedin.com/search/results/people/?keywords=Jean%20Dupont",
     text: "Guims Academy m'a permis d'acquérir des compétences pratiques directement exploitables en entreprise. L'accompagnement et les outils fournis m'ont permis d'obtenir un emploi immédiatement après ma formation.",
-    rating: 5,
-    bio: "Passionné par l'organisation et la gestion administrative, Jean a rejoint Guims Academy pour professionnaliser ses compétences. Rigoureux et doté d'un excellent sens relationnel, il s'est démarqué par sa maîtrise des outils collaboratifs modernes.",
-    skills: ["Gestion d'agenda complexe", "Rédaction de rapports professionnels", "Outils de bureautique avancés", "Organisation d'événements d'entreprise", "Gestion de courrier électronique"],
-    projects: ["Optimisation du système d'archivage numérique de Guims Group", "Création d'un guide de procédures administratives internes"],
-    advice: "Soyez curieux et pratiquez tous les jours sur les ordinateurs mis à disposition. Les formateurs sont là pour vous pousser vers l'excellence."
+    rating: 5, bio: "Passionné par l'organisation et la gestion administrative, Jean a rejoint Guims Academy pour professionnaliser ses compétences.",
+    skills: ["Gestion d'agenda complexe", "Rédaction de rapports professionnels", "Outils de bureautique avancés"],
+    projects: ["Optimisation du système d'archivage numérique de Guims Group"],
+    advice: "Soyez curieux et pratiquez tous les jours.", image_position: null, created_at: '',
   },
   {
-    name: "Marie Songo",
-    formation: "Marketing Digital",
-    promotion: "Promotion 2025",
-    status: "Community Manager Freelance",
-    avatar: avatarMarie,
-    socialProfileUrl: "https://www.linkedin.com/search/results/people/?keywords=Marie%20Songo",
-    text: "Une formation intense et ultra-pratique. Les projets réels sur lesquels nous avons travaillé m'ont donné la confiance nécessaire pour me lancer à mon propre compte.",
-    rating: 5,
-    bio: "Marie a toujours eu la fibre créative et le goût des réseaux sociaux. Grâce à sa formation chez Guims Academy, elle a appris à canaliser cette créativité pour concevoir des campagnes digitales performantes et génératrices de résultats.",
-    skills: ["Copywriting & Création de contenu", "Gestion de campagnes Ads (Meta, Google)", "SEO & Référencement naturel", "Analyse d'audience et reporting", "Graphisme basique (Canva, Photoshop)"],
-    projects: ["Lancement d'une boutique e-commerce de mode locale", "Stratégie Social Media pour une startup agroalimentaire (+40% d'abonnés)"],
-    advice: "N'ayez pas peur de tester et de faire des erreurs lors des ateliers. Le marketing digital s'apprend par l'expérimentation constante."
+    id: '2', name: "Marie Songo", formation: "Marketing Digital", promotion: "Promotion 2025",
+    status: "Community Manager Freelance", avatar_url: avatarMarie,
+    social_profile_url: "https://www.linkedin.com/search/results/people/?keywords=Marie%20Songo",
+    text: "Une formation intense et ultra-pratique. Les projets réels m'ont donné la confiance nécessaire pour me lancer à mon propre compte.",
+    rating: 5, bio: "Marie a toujours eu la fibre créative et le goût des réseaux sociaux.",
+    skills: ["Copywriting & Création de contenu", "SEO & Référencement naturel", "Analyse d'audience"],
+    projects: ["Lancement d'une boutique e-commerce de mode locale"],
+    advice: "N'ayez pas peur de tester et de faire des erreurs.", image_position: null, created_at: '',
   },
   {
-    name: "Alain Essomba",
-    formation: "Secrétariat Comptable",
-    promotion: "Promotion 2024",
-    status: "Comptable junior chez Guims Group",
-    avatar: avatarAlain,
-    imagePosition: "72% center",
-    socialProfileUrl: "https://www.linkedin.com/search/results/people/?keywords=Alain%20Kotto",
-    text: "La qualité des cours et le professionnalisme des formateurs sont remarquables. Le réseau de l'école est un véritable accélérateur de carrière pour s'insérer rapidement.",
-    rating: 5,
-    bio: "Avec un esprit analytique fort, Alain voulait maîtriser les rouages de la comptabilité d'entreprise. Guims Academy lui a fourni les outils logiciels et la logique comptable indispensable pour être opérationnel immédiatement en entreprise.",
-    skills: ["Saisie et rapprochement bancaire", "Utilisation avancée du logiciel Sage Saari", "Gestion des déclarations fiscales et sociales", "Établissement des bulletins de paie", "Analyse des bilans financiers"],
-    projects: ["Audit et restructuration comptable d'une PME locale", "Automatisation des processus de facturation"],
-    advice: "La comptabilité demande de la rigueur et de la concentration. Concentrez-vous sur les ateliers pratiques de Sage."
+    id: '3', name: "Alain Essomba", formation: "Secrétariat Comptable", promotion: "Promotion 2024",
+    status: "Comptable junior chez Guims Group", avatar_url: avatarAlain, image_position: "72% center",
+    social_profile_url: "https://www.linkedin.com/search/results/people/?keywords=Alain%20Kotto",
+    text: "La qualité des cours et le professionnalisme des formateurs sont remarquables.",
+    rating: 5, bio: "Alain voulait maîtriser les rouages de la comptabilité d'entreprise.",
+    skills: ["Saisie et rapprochement bancaire", "Sage Saari", "Déclarations fiscales"],
+    projects: ["Audit et restructuration comptable d'une PME locale"],
+    advice: "La comptabilité demande de la rigueur.", created_at: '',
   },
-  {
-    name: "Sandrine Eboa",
-    formation: "Secrétariat Bureautique",
-    promotion: "Promotion 2025",
-    status: "Secrétaire de Direction à la SCB",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
-    socialProfileUrl: "https://www.linkedin.com/search/results/people/?keywords=Sandrine%20Eboa",
-    text: "Je recommande vivement Guims Academy. L'infrastructure est moderne et l'apprentissage est axé à 100% sur la pratique professionnelle.",
-    rating: 5,
-    bio: "Sandrine souhaitait effectuer une reconversion professionnelle rapide. En partant de zéro en informatique, elle a su acquérir en 3 mois l'assurance et la vitesse de travail nécessaires pour gérer un secrétariat moderne avec brio.",
-    skills: ["Vitesse de saisie clavier rapide", "Mise en page de documents complexes (Word)", "Création de tableaux de bord Excel", "Gestion du courrier et accueil client", "Outils de visioconférence et cloud"],
-    projects: ["Conception de supports visuels de communication d'entreprise", "Création d'une base de données clients sous Excel"],
-    advice: "Même en partant de zéro, la méthode pédagogique de Guims Academy et l'accompagnement personnalisé vous permettent d'y arriver sereinement."
-  }
 ];
 
 const LaureatsPage = () => {
   const [filter, setFilter] = useState('All');
   const [search, setSearch] = useState('');
-  const [selectedLaureat, setSelectedLaureat] = useState<typeof LAUREATS_DATA[0] | null>(null);
+  const [selectedLaureat, setSelectedLaureat] = useState<Laureat | null>(null);
+  const [laureats, setLaureats] = useState<Laureat[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const categories = ['All', 'Secrétariat', 'Marketing'];
 
-  const filteredLaureats = LAUREATS_DATA.filter(laureat => {
+  useEffect(() => {
+    fetchLaureats();
+  }, []);
+
+  const fetchLaureats = async () => {
+    setLoading(true);
+    const { data, error } = await supabase.from('laureats').select('*').order('created_at', { ascending: false });
+
+    if (error || !data || data.length === 0) {
+      setLaureats(STATIC_LAUREATS as Laureat[]);
+    } else {
+      setLaureats(data as Laureat[]);
+    }
+    setLoading(false);
+  };
+
+  const filteredLaureats = laureats.filter(laureat => {
     const matchesCategory = filter === 'All' ||
       (filter === 'Secrétariat' && laureat.formation.includes('Secrétariat')) ||
       (filter === 'Marketing' && laureat.formation.includes('Marketing'));
@@ -95,10 +91,10 @@ const LaureatsPage = () => {
             <div className="profile-header-main">
               <div className="profile-avatar-wrapper">
                 <img
-                  src={selectedLaureat.avatar}
+                  src={selectedLaureat.avatar_url || ''}
                   alt={selectedLaureat.name}
                   className="profile-large-avatar"
-                  style={selectedLaureat.imagePosition ? { objectPosition: selectedLaureat.imagePosition } : undefined}
+                  style={selectedLaureat.image_position ? { objectPosition: selectedLaureat.image_position } : undefined}
                 />
                 <div className="profile-award-badge">
                   <Award size={20} />
@@ -112,16 +108,11 @@ const LaureatsPage = () => {
                   <Briefcase size={16} />
                   <span>{selectedLaureat.status}</span>
                 </div>
-                <a
-                  href={selectedLaureat.socialProfileUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="profile-social-link"
-                >
-                  <Network size={17} />
-                  Voir le profil LinkedIn
-                  <ExternalLink size={14} aria-hidden="true" />
-                </a>
+                {selectedLaureat.social_profile_url && (
+                  <a href={selectedLaureat.social_profile_url} target="_blank" rel="noreferrer" className="profile-social-link">
+                    <Network size={17} /> Voir le profil LinkedIn <ExternalLink size={14} aria-hidden="true" />
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -134,7 +125,6 @@ const LaureatsPage = () => {
                 <h3><BookOpen size={18} /> Biographie & Parcours</h3>
                 <p>{selectedLaureat.bio}</p>
               </div>
-
               <div className="profile-card-item testimonial-full-card">
                 <h3><Star size={18} /> Témoignage</h3>
                 <div className="stars-rating-large">
@@ -155,7 +145,6 @@ const LaureatsPage = () => {
                   ))}
                 </div>
               </div>
-
               <div className="profile-card-item projects-card">
                 <h3><Briefcase size={18} /> Projets Majeurs Réalisés</h3>
                 <ul className="profile-projects-list">
@@ -167,7 +156,6 @@ const LaureatsPage = () => {
                   ))}
                 </ul>
               </div>
-
               <div className="profile-card-item advice-card">
                 <h3>Conseil pour les futurs étudiants</h3>
                 <p className="profile-advice-text">{selectedLaureat.advice}</p>
@@ -183,9 +171,9 @@ const LaureatsPage = () => {
     <div className="laureats-page animate-fade-in">
       <div className="laureats-hero">
         <div className="container">
-          <a href="#" className="back-home-link">
+          <Link to="/" className="back-home-link">
             <ArrowLeft size={16} /> Retour à l'accueil
-          </a>
+          </Link>
           <div className="laureats-badge">
             <GraduationCap size={20} />
             <span>Success Stories</span>
@@ -221,13 +209,15 @@ const LaureatsPage = () => {
           </div>
         </div>
 
-        {filteredLaureats.length > 0 ? (
+        {loading ? (
+          <div className="admin-loading"><div className="route-loading-spinner" /><p>Chargement...</p></div>
+        ) : filteredLaureats.length > 0 ? (
           <div className="laureats-grid-modern">
-            {filteredLaureats.map((laureat, idx) => (
+            {filteredLaureats.map((laureat) => (
               <ElitePlanCard
-                key={idx}
-                imageUrl={laureat.avatar}
-                imagePosition={laureat.imagePosition}
+                key={laureat.id}
+                imageUrl={laureat.avatar_url || ''}
+                imagePosition={laureat.image_position || undefined}
                 title={laureat.name}
                 subtitle={`${laureat.promotion} • ${laureat.formation}`}
                 description={`"${laureat.text.length > 130 ? laureat.text.substring(0, 130) + '...' : laureat.text}"`}
@@ -235,7 +225,7 @@ const LaureatsPage = () => {
                 ctaText="Découvrir le profil"
                 onAction={() => {
                   setSelectedLaureat(laureat);
-                  window.scrollTo({ top: 0, behavior: 'instant' as any });
+                  window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
                 }}
               />
             ))}

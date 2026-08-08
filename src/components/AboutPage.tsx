@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import { Award, BookOpen, Users, Target, ArrowLeft } from 'lucide-react';
-import guimsImage from '../assets/hero.png';
+import guimsVideo from '../assets/guims2.mp4';
 import './about-page.css';
 
 const AboutPage = () => {
@@ -7,9 +8,9 @@ const AboutPage = () => {
     <div className="about-page animate-fade-in">
       <div className="about-page-hero">
         <div className="container">
-          <a href="#" className="back-home-link">
+          <Link to="/" className="back-home-link">
             <ArrowLeft size={16} /> Retour à l'accueil
-          </a>
+          </Link>
           <h1>À propos de Guims Academy</h1>
           <p className="about-page-subtitle">
             Découvrez notre histoire, notre mission et nos valeurs.
@@ -70,7 +71,7 @@ const AboutPage = () => {
         <section className="about-section">
           <div className="about-section-grid reverse">
             <div className="about-section-visual">
-              <img src={guimsImage} alt="Guims Academy" className="about-section-image" />
+              <video src={guimsVideo} className="about-section-image" controls autoPlay loop />
             </div>
             <div className="about-section-text">
               <h2>Notre Histoire</h2>
@@ -147,12 +148,12 @@ const AboutPage = () => {
           <h2>Prêt à développer vos compétences ?</h2>
           <p>Découvrez nos formations et rejoignez la communauté Guims Academy.</p>
           <div className="about-cta-buttons">
-            <a href="#formations" className="about-cta-primary">
+            <Link to="/formations" className="about-cta-primary">
               Voir nos formations
-            </a>
-            <a href="#contact" className="about-cta-secondary">
+            </Link>
+            <Link to="/contact" className="about-cta-secondary">
               Nous contacter
-            </a>
+            </Link>
           </div>
         </section>
       </div>

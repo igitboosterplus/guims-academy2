@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import {
   motion,
   useReducedMotion,
@@ -134,16 +135,16 @@ const Hero = () => {
           className="hero10-header"
         >
           <h1 className="hero10-title">
-            <Balancer>Osez innover, Osez créer</Balancer>
+            <Balancer>Accélérez votre réussite,</Balancer>
             <br />
             <Balancer>
-              <span>avec </span>
-              <span className="hero10-title-highlight">excellence</span>
+              <span>Débloquez votre </span>
+              <span className="hero10-title-highlight">potentiel</span>
             </Balancer>
           </h1>
           <p className="hero10-description">
             <Balancer>
-              Formations professionnelles certifiantes pour les particuliers et les entreprises. Développez les compétences qui font avancer vos projets.
+              Le centre d'excellence qui accompagne les entreprises, forme les particuliers, et propose des parcours 100% en ligne adaptés à vos ambitions.
             </Balancer>
           </p>
         </motion.div>
@@ -154,12 +155,15 @@ const Hero = () => {
           className="hero10-ctas"
         >
           <div className="hero10-cta-row">
-            <a href="#formations-particuliers" className="hero10-btn-primary">
-              Commencer une formation
-            </a>
-            <a href="#formations-entreprises" className="hero10-btn-outline">
-              Former mon entreprise
-            </a>
+            <Link to="/formations" className="hero10-btn-primary">
+              Pour Particuliers
+            </Link>
+            <Link to="/formations" className="hero10-btn-outline">
+              Pour Entreprises
+            </Link>
+            <Link to="/formations" className="hero10-btn-outline">
+              100% En Ligne
+            </Link>
           </div>
         </motion.div>
 

@@ -1,15 +1,46 @@
-import { Mail, Phone, MapPin, Clock, ArrowLeft } from 'lucide-react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Mail, Phone, MapPin, Clock, ArrowLeft, CheckCircle, Loader2 } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 import { CONTACT_INFO } from '../constants';
 import './contact-page.css';
 
 const ContactPage = () => {
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError('');
+
+    const { error: dbError } = await supabase.from('contact_messages').insert({
+      name: form.name,
+      email: form.email,
+      subject: form.subject,
+      message: form.message,
+      is_read: false,
+    });
+
+    if (dbError) {
+      setError('Une erreur est survenue. Veuillez réessayer ou nous contacter par WhatsApp.');
+      setSubmitting(false);
+    } else {
+      setSubmitted(true);
+      setSubmitting(false);
+      setForm({ name: '', email: '', subject: '', message: '' });
+    }
+  };
+
   return (
     <div className="contact-page animate-fade-in">
       <div className="contact-hero">
         <div className="container">
-          <a href="#" className="back-home-link">
+          <Link to="/" className="back-home-link">
             <ArrowLeft size={16} /> Retour à l'accueil
-          </a>
+          </Link>
           <h1>Nous Contacter</h1>
           <p className="contact-subtitle">
             Vous avez une question ? Nous sommes là pour vous répondre.
@@ -33,7 +64,7 @@ const ContactPage = () => {
             <h3>Email</h3>
             <p>
               <a href="mailto:contact@guimsacademy.com">
-                contact@guimsacademy.com
+                contacts@guimsacademy.com
               </a>
             </p>
             <p className="contact-meta">Envoyez-nous un email</p>
@@ -56,55 +87,44 @@ const ContactPage = () => {
 
         <div className="contact-section">
           <h2>Envoyez-nous un message</h2>
-          <form className="contact-form">
-            <div className="form-group">
-              <label htmlFor="name">Nom complet</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Votre nom"
-                required
-              />
-            </div>
 
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="votre.email@exemple.com"
-                required
-              />
+          {submitted ? (
+            <div className="contact-success">
+              <CheckCircle size={48} />
+              <h3>Message envoyé !</h3>
+              <p>Votre message a bien été reçu. Nous vous répondrons dans les plus brefs délais.</p>
+              <button onClick={() => setSubmitted(false)} className="contact-submit-btn" style={{ marginTop: '1rem' }}>
+                Envoyer un autre message
+              </button>
             </div>
-
-            <div className="form-group">
-              <label htmlFor="subject">Sujet</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="Sujet de votre demande"
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Décrivez votre demande..."
-                rows={6}
-                required
-              />
-            </div>
-
-            <button type="submit" className="contact-submit-btn">
-              Envoyer le message
-            </button>
-          </form>
+          ) : (
+            <form className="contact-form" onSubmit={handleSubmit}>
+              {error && <div className="alert-message error"><span>{error}</span></div>}
+              <div className="form-group">
+                <label htmlFor="name">Nom complet</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required
+                  value={form.name} onChange={(e) => setForm({...form, name: e.target.value})} />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required
+                  value={form.email} onChange={(e) => setForm({...form, email: e.target.value})} />
+              </div>
+              <div className="form-group">
+                <label htmlFor="subject">Sujet</label>
+                <input type="text" id="subject" name="subject" placeholder="Sujet de votre demande" required
+                  value={form.subject} onChange={(e) => setForm({...form, subject: e.target.value})} />
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea id="message" name="message" placeholder="Décrivez votre demande..." rows={6} required
+                  value={form.message} onChange={(e) => setForm({...form, message: e.target.value})} />
+              </div>
+              <button type="submit" className="contact-submit-btn" disabled={submitting}>
+                {submitting ? <><Loader2 size={18} className="spin" /> Envoi en cours...</> : 'Envoyer le message'}
+              </button>
+            </form>
+          )}
         </div>
 
         <div className="contact-cta">

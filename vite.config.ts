@@ -4,4 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    // Enable SPA fallback for react-router-dom
+    // All routes will be handled by index.html
+  },
 })

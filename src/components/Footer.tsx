@@ -1,40 +1,40 @@
-import logo from '../assets/logo Guims Acadeny.jpg';
+import { Link } from 'react-router-dom';
 import { CONTACT_INFO } from '../constants';
 import './footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer-premium" id="contact">
+    <footer className="footer-premium">
       <div className="container footer-grid-container">
         <div className="footer-col-brand">
-          <img src={logo} alt="Guims Academy" className="footer-logo" />
-          <p className="footer-brand-desc">
-            Guims Academy accompagne particuliers et entreprises avec des programmes pratiques pour développer les compétences d'aujourd'hui et de demain.
-          </p>
+          <h4>Guims Academy</h4>
+          <p className="footer-brand-desc">{CONTACT_INFO.slogan}</p>
         </div>
-
-        <div className="footer-col-contact">
+        <div>
+          <h4>Navigation</h4>
+          <ul className="footer-list">
+            <li><Link to="/">Accueil</Link></li>
+            <li><Link to="/formations">Formations</Link></li>
+            <li><Link to="/laureats">Lauréats</Link></li>
+            <li><Link to="/actualites">Actualités</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </div>
+        <div>
           <h4>Contact</h4>
           <ul className="footer-list contact-list">
-            <li>
-              <a href="tel:+237655955615">{CONTACT_INFO.phone}</a>
-            </li>
-            <li>
-              <a href="mailto:contact@guimsacademy.com">contact@guimsacademy.com</a>
-            </li>
-            <li>
-              <span>{CONTACT_INFO.location}</span>
-            </li>
+            <li><span>{CONTACT_INFO.phone}</span></li>
+            <li><span>{CONTACT_INFO.email}</span></li>
+            <li><span>{CONTACT_INFO.location}</span></li>
           </ul>
         </div>
       </div>
-
       <div className="container">
-        <div className="footer-premium-divider" />
+        <div className="footer-premium-divider"></div>
         <div className="footer-premium-bottom">
           <p className="copyright">&copy; {new Date().getFullYear()} Guims Academy. Tous droits réservés.</p>
           <div className="footer-socials">
-            <a href="https://wa.me/237655955615" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            {/* Social links can go here */}
           </div>
         </div>
       </div>
